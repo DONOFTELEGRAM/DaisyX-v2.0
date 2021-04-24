@@ -73,7 +73,7 @@ async def get_start_func(message, strings, edit=False):
 
     task = msg.edit_text if edit else msg.reply
     buttons = InlineKeyboardMarkup()
-    buttons.add(InlineKeyboardButton(strings["btn_help"], callback_data="get_help"))
+    buttons.add(InlineKeyboardButton(strings["btn_help & Commands ❔"], callback_data="get_help"))
     buttons.add(
         InlineKeyboardButton(strings["btn_lang"], callback_data="lang_btn"),
         InlineKeyboardButton(
@@ -81,13 +81,13 @@ async def get_start_func(message, strings, edit=False):
         ),
     )
     buttons.add(
-        InlineKeyboardButton(strings["btn_channel"], url="https://t.me/DaisyXUpdates"),
-        InlineKeyboardButton("👥 Support Grup", url="https://t.me/DaisyXUpdates"),
+        InlineKeyboardButton(strings["btn_Updates"], url="https://t.me/Andrea_Updates"),
+        InlineKeyboardButton("👥 Support Group", url="https://t.me/AndreaSupportChat"),
     )
     buttons.add(
         InlineKeyboardButton(
-            "👸🏼 Add DaisyX to your group",
-            url=f"https://telegram.me/daisyxbot?startgroup=true",
+            "Add Andrea to your group ",
+            url=f"https://telegram.me/MissAdreaBot?startgroup=true",
         )
     )
     # Handle error when user click the button 2 or more times simultaneously
@@ -143,7 +143,7 @@ async def helpmenu_callback(query, callback_data=None, **kwargs):
     msg = f"Help for <b>{mod}</b> module:\n"
     msg += f"{MOD_HELP[mod]}"
     button = InlineKeyboardMarkup().add(
-        InlineKeyboardButton(text="🏃‍♂️ Back", callback_data="get_help")
+        InlineKeyboardButton(text="🔙 Back", callback_data="get_help")
     )
     with suppress(MessageNotModified):
         await query.message.edit_text(
