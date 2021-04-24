@@ -73,7 +73,7 @@ async def get_start_func(message, strings, edit=False):
 
     task = msg.edit_text if edit else msg.reply
     buttons = InlineKeyboardMarkup()
-    buttons.add(InlineKeyboardButton(strings["btn_help & Commands ❔"], callback_data="get_help"))
+    buttons.add(InlineKeyboardButton(strings["btn_help"], callback_data="get_help"))
     buttons.add(
         InlineKeyboardButton(strings["btn_lang"], callback_data="lang_btn"),
         InlineKeyboardButton(
